@@ -9,24 +9,24 @@ export default function App() {
   const [currentNumber, setCurrentNumber] = useState('');
   const [lastNumber, setLastNumber] = useState('');
 
-  function calculator(){
+  function calculator() {
     const splitNumbers = currentNumber.split(' ');
     const fistNumber = parseFloat(splitNumbers[0]);
     const lastNumber = parseFloat(splitNumbers[2]);
     const operator = splitNumbers[1];
 
     // Faz ação referente tecla pressionada
-    switch(operator){
+    switch (operator) {
       case '+':
         setCurrentNumber((fistNumber + lastNumber).toString());
         return;
-      case '-': 
+      case '-':
         setCurrentNumber((fistNumber - lastNumber).toString());
         return;
       case 'x':
         setCurrentNumber((fistNumber + lastNumber).toString());
         return;
-      case '/': 
+      case '/':
         setCurrentNumber((fistNumber - lastNumber).toString());
         return;
     }
@@ -42,7 +42,8 @@ export default function App() {
       case 'DEL':
         setCurrentNumber(currentNumber.substring(0, (currentNumber.length - 2)));
         return;
-      case 'LIMPAR': // Limpa todo o conteúdo
+      case 'LIMPAR':
+      // Limpa todo o conteúdo
         setLastNumber("");
         setCurrentNumber(""); 
         return;
