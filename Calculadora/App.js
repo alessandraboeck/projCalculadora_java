@@ -9,7 +9,6 @@ export default function App() {
   const [currentNumber, setCurrentNumber] = useState("")
   const [lastNumber, setLastNumber] = useState("")
 
-
   function calculator(){
     const splitNumbers = currentNumber.split(' ')
     const fistNumber = parseFloat(splitNumbers[0])
@@ -54,14 +53,11 @@ export default function App() {
       case '+/-':
         return
     }
-
     setCurrentNumber(currentNumber + buttonPressed)
   }
 
-
   return (
     <View style={styles.container}>
-
       {/* Area onde o resultado é exibido */}
       <View style={styles.results}>
         <Text style={styles.historyText}>{lastNumber}</Text>
@@ -70,7 +66,6 @@ export default function App() {
 
       {/* Area onde os botões são exibidos*/}
       <View style={styles.buttons}>
-
         {buttons.map((button) => 
           button === '=' ? // Mapeamento do botão =
         <TouchableOpacity onPress={() => handleInput(button)} key={button} style={[styles.button, {backgroundColor: '#3dd0e3'}]}>
